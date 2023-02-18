@@ -1,0 +1,57 @@
+{
+    "name": "PlayerController",
+    "maps": [
+        {
+            "name": "Overworld",
+            "id": "7fd7759d-26b6-46b5-825f-b882f88502b6",
+            "actions": [
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "750353bd-8df7-4e82-b99d-220feb5f0acc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2bdf0aae-7ce3-4fe8-b15b-94f65b427ff9",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "414ed8fc-bab4-49c2-b214-bfd04c79868e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

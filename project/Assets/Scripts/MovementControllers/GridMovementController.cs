@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public abstract class MovingObject : MonoBehaviour
+public abstract class GridMovementController : MonoBehaviour, IMovementController
 {
     private Vector3 initialScale;
 
@@ -15,20 +15,6 @@ public abstract class MovingObject : MonoBehaviour
 
     private bool _isMoving = false;
 
-    // Start is called before the first frame update
-    protected virtual void Start()
-    {
-        boxCollider = GetComponent<BoxCollider2D>();
-        rb2D = GetComponent<Rigidbody2D>();
-        initialScale = transform.localScale;
-        inverseMoveTime = 1f / moveTime;
-    }
-
-    protected bool isMoving()
-    {
-        return _isMoving;
-    }
-
     protected IEnumerator SmoothMovement(Vector3 end)
     {
         float sqrRemainingDistance = (transform.position - end).sqrMagnitude;
@@ -39,21 +25,36 @@ public abstract class MovingObject : MonoBehaviour
             sqrRemainingDistance = (transform.position - end).sqrMagnitude;
             yield return null;
         }
-        _isMoving = false; 
+        _isMoving = false;
     }
 
-    protected bool Move(int xDir, int yDir, out RaycastHit2D hit)
+    // Start is called before the first frame update
+    protected virtual void Start()
+    {
+        boxCollider = GetComponent<BoxCollider2D>();
+        rb2D = GetComponent<Rigidbody2D>();
+        initialScale = transform.localScale;
+        inverseMoveTime = 1f / moveTime;
+    }
+
+    public bool isMoving()
+    {
+        return _isMoving;
+    }
+
+    public bool Move(int xDir, int yDir, out RaycastHit2D hit)
     {
         Vector2 start = transform.position;
         Vector2 end = start + new Vector2(xDir, yDir);
 
         boxCollider.enabled = false;
-       
-        hit = Physics2D.Linecast(start, end, blockingLayer.Aggregate((sum, next) => sum + next));
+
+        hit = Physics2D.Linecast(start, end);
         Debug.DrawLine(start, end, Color.white, 2.5f);
         boxCollider.enabled = true;
 
-        if (hit.transform == null)
+
+        if (!hit.collider?.GetComponent<MovementBlockableObject>())
         {
             StartCoroutine(SmoothMovement(end));
             return true;
@@ -91,21 +92,21 @@ public abstract class MovingObject : MonoBehaviour
     public void moveLeft()
     {
         transform.localScale = new Vector3(initialScale.x * -1, initialScale.y, initialScale.z);
-        AttemptMove<CantMove>(-1, 0);
+        AttemptMove<MovementBlockableObject>(-1, 0);
     }
 
     public void moveRight()
     {
         transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
-        AttemptMove<CantMove>(1, 0);
+        AttemptMove<MovementBlockableObject>(1, 0);
     }
     public void moveUp()
     {
-        AttemptMove<CantMove>(0, -1);
+        AttemptMove<MovementBlockableObject>(0, -1);
 
     }
     public void moveDown()
     {
-        AttemptMove<CantMove>(0, 1);
+        AttemptMove<MovementBlockableObject>(0, 1);
     }
 }

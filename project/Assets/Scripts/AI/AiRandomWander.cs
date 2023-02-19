@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Enemy : MovingObject
+public class AiRandomWander : GridMovementController, IEnemy
 {
-    public float movementInterval;
+    public float movementInterval = 2;
 
-    private float count = 0;
-    // Start is called before the first frame update frame update
+    private float count;
+
+
     protected override void Start()
     {
         base.Start();
     }
-
-    // Update is called once per frame
     void Update()
     {
         count += Time.deltaTime;
@@ -23,7 +22,7 @@ public class Enemy : MovingObject
 
     private void processMovement()
     {
-/*        if (count > movementInterval)
+        if (count > movementInterval)
         {
             string[] movementDirections = new[] { "right", "left", "up", "down" };
             string movementDirection = movementDirections[Random.Range(0, movementDirections.Length)];
@@ -44,7 +43,7 @@ public class Enemy : MovingObject
                     break;
             }
             count = 0;
-        }*/
+        }
     }
 
     protected override void OnCantMove<T>(T component)

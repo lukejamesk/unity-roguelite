@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7802544779859403653}
   - component: {fileID: 6089133651299123422}
   - component: {fileID: 649974571783600413}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: StoneWallTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1246057887
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1682592984, guid: 372f6bb489e8f734da96d10940d5bc93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -121,6 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2487289254867236166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a57555a59868d7d45a6e19a3ed04d51c, type: 3}
+  m_Script: {fileID: 11500000, guid: 24736d08e622f27429fb6713b774d6d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

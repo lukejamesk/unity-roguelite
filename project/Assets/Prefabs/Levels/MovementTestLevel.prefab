@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 96358648354763576}
   - component: {fileID: 1092663961831636126}
   m_Layer: 0
-  m_Name: Level1Background
+  m_Name: MovementTestLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

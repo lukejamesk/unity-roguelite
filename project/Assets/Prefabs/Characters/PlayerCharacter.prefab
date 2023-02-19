@@ -9,11 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8280075261099129418}
-  - component: {fileID: 8280075261099129417}
   - component: {fileID: 8280075261099129416}
   - component: {fileID: 4279630998362341092}
   - component: {fileID: 2395051393634952649}
   - component: {fileID: 5846500200484925952}
+  - component: {fileID: 2383991832601280259}
+  - component: {fileID: 4843441135138903637}
+  - component: {fileID: 596950917834701727}
   m_Layer: 10
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -36,24 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8280075261099129417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8280075261099129431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ada68d3c532ddf48a562108f1506b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockingLayer:
-  - serializedVersion: 2
-    m_Bits: 512
-  - serializedVersion: 2
-    m_Bits: 2048
-  moveTime: 0.1
 --- !u!212 &8280075261099129416
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -173,3 +157,42 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2383991832601280259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280075261099129431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379af35eda10a8c4592b570491978f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4843441135138903637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280075261099129431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ecc36c4ca3db6429ca4469b0778a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockingLayer: []
+  moveTime: 0.1
+  movementInterval: 2
+--- !u!114 &596950917834701727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280075261099129431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5021494292528ff4a8e9144121bc6182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

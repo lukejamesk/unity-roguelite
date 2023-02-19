@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class AiRandomWander : GridMovementController, IEnemy
+public class AiRandomWander : GridMovementController, IAi
 {
     public float movementInterval = 2;
 
     private float count;
 
+    private bool disabled = false;
 
     protected override void Start()
     {
@@ -16,8 +17,12 @@ public class AiRandomWander : GridMovementController, IEnemy
     }
     void Update()
     {
-        count += Time.deltaTime;
-        processMovement();
+        if (!disabled)
+        {
+            count += Time.deltaTime;
+            processMovement();
+        }
+        
     }
 
     private void processMovement()
@@ -48,6 +53,10 @@ public class AiRandomWander : GridMovementController, IEnemy
 
     protected override void OnCantMove<T>(T component)
     {
-        Debug.Log("Bat Cant Move");
+    }
+
+    public void Disable()
+    {
+        disabled = true;
     }
 }

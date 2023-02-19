@@ -35,9 +35,10 @@ public class GameManager : MonoBehaviour
         return _isInBattle;
     }
 
-    public void BeginBattle<T>(List<T> enemies)
+    public void BeginBattle(List<Enemy> enemies)
     {
-        Debug.Log("Begin Battle");
         _isInBattle = true;
+
+        enemies.ForEach(enemy => enemy.BeginBattle());
     }
 }

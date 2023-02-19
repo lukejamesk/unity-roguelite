@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class PlayerMovementController : GridMovementController
 {
     public float movementInterval = 2;
     private Animator animator;
+
 
     protected override void Start()
     {
@@ -67,9 +69,8 @@ public class PlayerMovementController : GridMovementController
     {
         if (component.GetComponent<Enemy>())
         {
-            var enemies = new List<T> { component };
-            GameManager.instance.BeginBattle<T>(enemies);
-            Debug.Log("Approached enemy");
+            var enemy = component.GetComponent<Enemy>();
+            EventBus.Trigger(EventConstants.PLAYER_ENEMY_APPROACHED, new List<Enemy> { enemy });
         }
     }
 }

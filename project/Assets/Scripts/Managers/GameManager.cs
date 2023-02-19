@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    private bool _isInBattle = false;
+    private bool isInBattle = false;
     private void Awake()
     {
         if (instance == null)
@@ -30,14 +30,14 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public bool isInBattle()
+    public bool IsInBattle()
     {
-        return _isInBattle;
+        return isInBattle;
     }
 
     public void BeginBattle(List<Enemy> enemies)
     {
-        _isInBattle = true;
+        isInBattle = true;
 
         enemies.ForEach(enemy => enemy.BeginBattle());
     }

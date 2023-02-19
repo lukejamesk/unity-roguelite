@@ -18,14 +18,14 @@ public class PlayerMovementController : GridMovementController
     }
     void Update()
     {
-        if (GameManager.instance.isInBattle())
+        if (GameManager.instance.IsInBattle())
         {
             animator.SetTrigger("playerBattleStance");
         }
         else
         {
             processMovement();
-            if (isMoving())
+            if (IsMoving())
             {
                 animator.SetTrigger("playerMove");
             }
@@ -43,11 +43,11 @@ public class PlayerMovementController : GridMovementController
         {
             if (Input.GetAxis("Horizontal") < 0)
             {
-                moveLeft();
+                MoveLeft();
             }
             else if (Input.GetAxis("Horizontal") > 0)
             {
-                moveRight();
+                MoveRight();
             }
 
         }
@@ -55,11 +55,11 @@ public class PlayerMovementController : GridMovementController
         {
             if (Input.GetAxis("Vertical") < 0)
             {
-                moveUp();
+                MoveUp();
             }
             else if (Input.GetAxis("Vertical") > 0)
             {
-                moveDown();
+                MoveDown();
             }
 
         }

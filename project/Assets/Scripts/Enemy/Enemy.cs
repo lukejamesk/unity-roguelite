@@ -22,10 +22,6 @@ public class Enemy : MovementBlockableObject, IEnemy
     {
     }
 
-    private void processMovement()
-    {
-    }
-
     public void BeginBattle()
     {
         aiMovement.Disable();

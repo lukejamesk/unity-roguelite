@@ -7,10 +7,10 @@ public class PlayerCharacter : MonoBehaviour
 {
     void Start()
     {
-        EventBus.Register<List<Enemy>>(EventConstants.PLAYER_ENEMY_APPROACHED, beginBattle);
+        EventBus.Register<List<Enemy>>(EventConstants.PLAYER_ENEMY_APPROACHED, BeginBattle);
     }
 
-    public void beginBattle(List<Enemy> enemies)
+    public void BeginBattle(List<Enemy> enemies)
     {
         GameManager.instance.BeginBattle(enemies);
     }

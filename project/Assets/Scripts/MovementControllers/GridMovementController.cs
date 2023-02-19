@@ -13,7 +13,7 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
     private float inverseMoveTime;
     public float moveTime = .1f;
 
-    private bool _isMoving = false;
+    private bool isMoving = false;
 
     protected IEnumerator SmoothMovement(Vector3 end)
     {
@@ -25,7 +25,7 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
             sqrRemainingDistance = (transform.position - end).sqrMagnitude;
             yield return null;
         }
-        _isMoving = false;
+        isMoving = false;
     }
 
     // Start is called before the first frame update
@@ -37,9 +37,9 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
         inverseMoveTime = 1f / moveTime;
     }
 
-    public bool isMoving()
+    public bool IsMoving()
     {
-        return _isMoving;
+        return isMoving;
     }
 
     public bool Move(int xDir, int yDir, out RaycastHit2D hit)
@@ -61,7 +61,7 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
         }
 
 
-        _isMoving = false;
+        isMoving = false;
 
         return false;
 
@@ -69,9 +69,9 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
 
     protected virtual void AttemptMove<T>(int xDir, int yDir) where T : Component
     {
-        if (!_isMoving)
+        if (!isMoving)
         {
-            _isMoving = true;
+            isMoving = true;
             RaycastHit2D hit;
             bool canMove = Move(xDir, yDir, out hit);
             if (canMove)
@@ -89,23 +89,23 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
 
     protected abstract void OnCantMove<T>(T component) where T : Component;
 
-    public void moveLeft()
+    public void MoveLeft()
     {
         transform.localScale = new Vector3(initialScale.x * -1, initialScale.y, initialScale.z);
         AttemptMove<MovementBlockableObject>(-1, 0);
     }
 
-    public void moveRight()
+    public void MoveRight()
     {
         transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
         AttemptMove<MovementBlockableObject>(1, 0);
     }
-    public void moveUp()
+    public void MoveUp()
     {
         AttemptMove<MovementBlockableObject>(0, -1);
 
     }
-    public void moveDown()
+    public void MoveDown()
     {
         AttemptMove<MovementBlockableObject>(0, 1);
     }

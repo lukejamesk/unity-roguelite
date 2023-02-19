@@ -20,12 +20,12 @@ public class AiRandomWander : GridMovementController, IAi
         if (!disabled)
         {
             count += Time.deltaTime;
-            processMovement();
+            ProcessMovement();
         }
         
     }
 
-    private void processMovement()
+    private void ProcessMovement()
     {
         if (count > movementInterval)
         {
@@ -35,16 +35,16 @@ public class AiRandomWander : GridMovementController, IAi
             switch (movementDirection)
             {
                 case "up":
-                    moveUp();
+                    MoveUp();
                     break;
                 case "down":
-                    moveDown();
+                    MoveDown();
                     break;
                 case "left":
-                    moveLeft();
+                    MoveLeft();
                     break;
                 case "right":
-                    moveRight();
+                    MoveRight();
                     break;
             }
             count = 0;

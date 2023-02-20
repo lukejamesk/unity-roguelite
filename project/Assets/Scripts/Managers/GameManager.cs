@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     private bool isInBattle = false;
+
+    public BattleSystem battleManager;
+
     private void Awake()
     {
         if (instance == null)
@@ -18,6 +21,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +39,10 @@ public class GameManager : MonoBehaviour
         return isInBattle;
     }
 
-    public void BeginBattle(List<Enemy> enemies)
+    public void BeginBattle(List<OverworldEnemy> enemies)
     {
         isInBattle = true;
+        StartCoroutine(battleManager.InitializeBattle(enemies));
 
-        enemies.ForEach(enemy => enemy.BeginBattle());
     }
 }

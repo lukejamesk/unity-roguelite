@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5758745239730213376}
   - component: {fileID: 5758745239730213383}
   - component: {fileID: 4257586088633833744}
-  - component: {fileID: -7585111865680894984}
   - component: {fileID: 1022520515410149549}
+  - component: {fileID: 3075027707470098690}
   m_Layer: 11
-  m_Name: EnemyBat
+  m_Name: OverworldEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,21 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementInterval: 2
---- !u!114 &-7585111865680894984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5758745239730213382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea8bed185e88d984dad2592f500190f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockingLayer: []
-  moveTime: 0.1
-  movementInterval: 2
 --- !u!50 &1022520515410149549
 Rigidbody2D:
   serializedVersion: 4
@@ -184,3 +169,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3075027707470098690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5758745239730213382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea8bed185e88d984dad2592f500190f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveTime: 0.1
+  movementInterval: 2

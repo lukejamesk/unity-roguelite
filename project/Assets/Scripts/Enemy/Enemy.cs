@@ -1,20 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class Enemy : MovementBlockableObject, IEnemy
+public class Enemy : MonoBehaviour, IEnemy
 {
-    public float movementInterval;
-
+    public Unit unit;
     private int _health = 100;
     public int health { get => _health; set => _health = health; }
 
-    public AiRandomWander aiMovement;
-
     void Awake()
     {
-        aiMovement = this.GetComponent<AiRandomWander>();
     }
 
 
@@ -22,8 +17,4 @@ public class Enemy : MovementBlockableObject, IEnemy
     {
     }
 
-    public void BeginBattle()
-    {
-        aiMovement.Disable();
-    }
 }

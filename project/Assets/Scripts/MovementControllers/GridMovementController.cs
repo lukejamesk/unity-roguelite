@@ -5,9 +5,6 @@ using UnityEngine;
 
 public abstract class GridMovementController : MonoBehaviour, IMovementController
 {
-    private Vector3 initialScale;
-
-    public List<LayerMask> blockingLayer;
     private Rigidbody2D rb2D;
     private BoxCollider2D boxCollider;
     private float inverseMoveTime;
@@ -33,7 +30,6 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
     {
         boxCollider = GetComponent<BoxCollider2D>();
         rb2D = GetComponent<Rigidbody2D>();
-        initialScale = transform.localScale;
         inverseMoveTime = 1f / moveTime;
     }
 
@@ -91,13 +87,11 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
 
     public void MoveLeft()
     {
-        transform.localScale = new Vector3(initialScale.x * -1, initialScale.y, initialScale.z);
         AttemptMove<MovementBlockableObject>(-1, 0);
     }
 
     public void MoveRight()
     {
-        transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
         AttemptMove<MovementBlockableObject>(1, 0);
     }
     public void MoveUp()

@@ -4,6 +4,5 @@ using UnityEngine;
 
 public interface IEnemy : IMovementBlockable
 {
-    int health { get; set; }
-    void BeginBattle();
+    public int health { get; set; }
 }

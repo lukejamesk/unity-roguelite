@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,7 +115,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 20
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f10ee11424cea44bc628e0b2a06c90
+      internalID: -1186618113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 20
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99278218097510b41a27cee779a94b5e
+      internalID: -1937967449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 20
+        width: 36
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f603082710f7e42876387d979afc42
+      internalID: -2099720964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 20
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e67c926f4cbb44fabfb5b4cf5eb32b
+      internalID: 901343540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_4
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 20
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85197a2c4e3c87a429908d025324b25d
+      internalID: -1953012909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_5
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 20
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991a3cb8739c317489c247757e1f2874
+      internalID: 681918413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_6
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 20
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e3cc878df1a0f49a6e7b2037f39b9e
+      internalID: -1522269597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_7
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 20
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ed5785fcd2fa2498fb38a220357bef
+      internalID: -834592648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_8
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 20
+        width: 35
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afa42a290faeeb498d1c30e988dba99
+      internalID: 2099940858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_9
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 20
+        width: 43
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71391823aec00024c92d80b067c3209e
+      internalID: -1427787285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_10
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 20
+        width: 38
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0227801bd86a3d408b9445d943ab5b9
+      internalID: -1214097898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_11
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 20
+        width: 37
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c04f49b9ff003e848bbdfb509443c74e
+      internalID: 717556218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_12
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 20
+        width: 37
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54c838962f55fe4db789c8d5f124135
+      internalID: 1471249584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_13
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 20
+        width: 37
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae076b3bda303a40b3281774b7c477e
+      internalID: 172566372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_14
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 20
+        width: 37
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d6ae2d016cc5f43bab12a489f228c7
+      internalID: -2121608985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_WolfAttack_strip_15
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 20
+        width: 37
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61938885c937e78419dc4ab96a950270
+      internalID: 121383081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +462,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      noBKG_WolfAttack_strip_6: -1522269597
+      noBKG_WolfAttack_strip_14: -2121608985
+      noBKG_WolfAttack_strip_1: -1937967449
+      noBKG_WolfAttack_strip_15: 121383081
+      noBKG_WolfAttack_strip_2: -2099720964
+      noBKG_WolfAttack_strip_8: 2099940858
+      noBKG_WolfAttack_strip_11: 717556218
+      noBKG_WolfAttack_strip_0: -1186618113
+      noBKG_WolfAttack_strip_4: -1953012909
+      noBKG_WolfAttack_strip_3: 901343540
+      noBKG_WolfAttack_strip_13: 172566372
+      noBKG_WolfAttack_strip_7: -834592648
+      noBKG_WolfAttack_strip_9: -1427787285
+      noBKG_WolfAttack_strip_5: 681918413
+      noBKG_WolfAttack_strip_10: -1214097898
+      noBKG_WolfAttack_strip_12: 1471249584
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

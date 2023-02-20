@@ -6,12 +6,9 @@ using Unity.VisualScripting;
 public class PlayerMovementController : GridMovementController
 {
     public float movementInterval = 2;
-    private Animator animator;
-
 
     protected override void Start()
     {
-        animator = GetComponent<Animator>();
         transform.position = new Vector3(.5f, .5f, 0);
 
         base.Start();
@@ -20,20 +17,10 @@ public class PlayerMovementController : GridMovementController
     {
         if (GameManager.instance.IsInBattle())
         {
-            animator.SetTrigger("playerBattleStance");
         }
         else
         {
             processMovement();
-            if (IsMoving())
-            {
-                animator.SetTrigger("playerMove");
-            }
-            else
-            {
-                animator.ResetTrigger("playerMove");
-                animator.SetTrigger("playerIdle");
-            }
         }
     }
 
@@ -67,10 +54,10 @@ public class PlayerMovementController : GridMovementController
     
     protected override void OnCantMove<T>(T component)
     {
-        if (component.GetComponent<Enemy>())
+        if (component.GetComponent<OverworldEnemy>())
         {
-            var enemy = component.GetComponent<Enemy>();
-            EventBus.Trigger(EventConstants.PLAYER_ENEMY_APPROACHED, new List<Enemy> { enemy });
+            var enemy = component.GetComponent<OverworldEnemy>();
+            EventBus.Trigger(EventConstants.PLAYER_ENEMY_APPROACHED, new List<OverworldEnemy> { enemy });
         }
     }
 }

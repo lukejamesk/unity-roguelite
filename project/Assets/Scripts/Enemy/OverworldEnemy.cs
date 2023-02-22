@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class OverworldEnemy : MovementBlockableObject, IOverworldEnemy
+public class OverworldEnemy : MovementBlockableObject
 {
-    private AiRandomWander aiMovement;
+/*    private AiRandomWander aiMovement;*/
 
     void Awake()
     {
-        aiMovement = GetComponent<AiRandomWander>();
+   /*     aiMovement = GetComponent<AiRandomWander>();*/
     }
 
 
@@ -19,6 +19,6 @@ public class OverworldEnemy : MovementBlockableObject, IOverworldEnemy
 
     public void BeginBattle()
     {
-        aiMovement.Disable();
+/*        aiMovement.Disable();*/
     }
 }

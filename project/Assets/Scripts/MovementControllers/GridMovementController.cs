@@ -5,8 +5,8 @@ using UnityEngine;
 
 public abstract class GridMovementController : MonoBehaviour, IMovementController
 {
-    private Rigidbody2D rb2D;
-    private BoxCollider2D boxCollider;
+    public Rigidbody2D rb2D;
+    public BoxCollider2D boxCollider;
     private float inverseMoveTime;
     public float moveTime = .1f;
 
@@ -22,14 +22,14 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
             sqrRemainingDistance = (transform.position - end).sqrMagnitude;
             yield return null;
         }
+
+        OnStoppedMove();
         isMoving = false;
     }
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
-        rb2D = GetComponent<Rigidbody2D>();
         inverseMoveTime = 1f / moveTime;
     }
 
@@ -72,6 +72,7 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
             bool canMove = Move(xDir, yDir, out hit);
             if (canMove)
             {
+                OnStartMove();
                 return;
             }
 
@@ -83,6 +84,8 @@ public abstract class GridMovementController : MonoBehaviour, IMovementControlle
         }
     }
 
+    protected abstract void OnStoppedMove();
+    protected abstract void OnStartMove();
     protected abstract void OnCantMove<T>(T component) where T : Component;
 
     public void MoveLeft()

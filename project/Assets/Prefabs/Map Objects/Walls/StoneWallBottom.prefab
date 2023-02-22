@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1647349763290154452}
   - component: {fileID: 7802544779859403653}
   - component: {fileID: 6089133651299123422}
-  - component: {fileID: 649974571783600413}
+  - component: {fileID: 3619066257670778132}
   m_Layer: 12
   m_Name: StoneWallBottom
   m_TagString: Untagged
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &649974571783600413
+--- !u!114 &3619066257670778132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2487289254867236166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24736d08e622f27429fb6713b774d6d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5021494292528ff4a8e9144121bc6182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

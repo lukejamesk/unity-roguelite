@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitStats : MonoBehaviour
+
+[CreateAssetMenu(fileName = "UnitStats", menuName = "BattleSystem/Unit Stats")]
+public class UnitStats : ScriptableObject
 {
     public int health;
     public int speed;

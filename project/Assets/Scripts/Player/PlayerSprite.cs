@@ -14,7 +14,7 @@ public class PlayerSprite : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.instance.IsInBattle())
+      /*  if (GameManager.instance.IsInBattle())
         {
         }
         else
@@ -28,6 +28,6 @@ public class PlayerSprite : MonoBehaviour
                 animator.ResetTrigger("playerMove");
                 animator.SetTrigger("playerIdle");
             }
-        }
+        }*/
     }
 }

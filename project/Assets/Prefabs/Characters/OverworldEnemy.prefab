@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5758745239730213377}
   - component: {fileID: 5758745239730213376}
   - component: {fileID: 5758745239730213383}
-  - component: {fileID: 4257586088633833744}
   - component: {fileID: 1022520515410149549}
-  - component: {fileID: 3075027707470098690}
+  - component: {fileID: 6453629458252094077}
+  - component: {fileID: 3834923923178729552}
   m_Layer: 11
   m_Name: OverworldEnemy
   m_TagString: Untagged
@@ -135,19 +135,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4257586088633833744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5758745239730213382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1efbd2914dc5acd46b88006aa70c2dc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementInterval: 2
 --- !u!50 &1022520515410149549
 Rigidbody2D:
   serializedVersion: 4
@@ -169,7 +156,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3075027707470098690
+--- !u!114 &6453629458252094077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,5 +168,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8bed185e88d984dad2592f500190f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2D: {fileID: 1022520515410149549}
+  boxCollider: {fileID: 5758745239730213383}
   moveTime: 0.1
   movementInterval: 2
+--- !u!114 &3834923923178729552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5758745239730213382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5021494292528ff4a8e9144121bc6182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

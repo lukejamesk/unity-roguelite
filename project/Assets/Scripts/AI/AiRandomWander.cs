@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+ 
+[AddComponentMenu("AI/Random Wander")]
 public class AiRandomWander : GridMovementController, IAi
 {
     public float movementInterval = 2;
@@ -49,6 +50,14 @@ public class AiRandomWander : GridMovementController, IAi
             }
             count = 0;
         }
+    }
+
+    protected override void OnStartMove()
+    {
+    }
+
+    protected override void OnStoppedMove()
+    {
     }
 
     protected override void OnCantMove<T>(T component)

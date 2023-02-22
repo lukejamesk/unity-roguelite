@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+[CreateAssetMenu(fileName = "Unit", menuName = "BattleSystem/Unit")]
+public class Unit : ScriptableObject
 {
     public UnitStats unitStats;
     public string unitName;

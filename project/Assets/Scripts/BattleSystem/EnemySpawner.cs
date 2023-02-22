@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<Enemy> spawnableEnemies;
+    public SpawnableEnemies SpawnableEnemies;
     // Start is called before the first frame update
     void Start()
     { 
@@ -17,15 +18,20 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
-    public List<Enemy> SpawnEnemiesFrom(OverworldEnemy enemy)
+    public void SpawnEnemiesFrom(CollisionData collisionData)
     {
+
+        Debug.Log("Spawning enemies");
+        Debug.Log(collisionData.CollidedWith);
+
         var enemiesSpawned = new List<Enemy>();
-        Vector3 location = enemy.gameObject.transform.position;
-        enemiesSpawned.Add(Instantiate(spawnableEnemies[0], location, Quaternion.identity));
-        enemiesSpawned.Add(Instantiate(spawnableEnemies[0], new Vector3(location.x - 1, location.y + 1), Quaternion.identity));
+        Vector3 location = collisionData.CollidedWith.transform.position;
+        var wolf1 = Instantiate(SpawnableEnemies.enemies[0], location, Quaternion.identity);
+        enemiesSpawned.Add(wolf1);
 
-        Destroy(enemy.gameObject);
+        var wolf2 = Instantiate(SpawnableEnemies.enemies[0], new Vector3(location.x - 1, location.y + 1), Quaternion.identity);
+        enemiesSpawned.Add(wolf2);
 
-        return enemiesSpawned;
+        Destroy(collisionData.CollidedWith);
     }
 }

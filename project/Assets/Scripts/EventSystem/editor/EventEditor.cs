@@ -18,7 +18,7 @@ public class EventEditor : Editor
 
 
         GameEvent e = target as GameEvent;
-        if (GUILayout.Button("Raise"))
-            e.Raise(null, null);
+      /*  if (GUILayout.Button("Raise"))
+            e.Raise<Null>(null);*/
     }
 }

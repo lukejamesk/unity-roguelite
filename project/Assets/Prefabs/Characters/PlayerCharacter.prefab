@@ -127,7 +127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6057976059466428474}
-  - component: {fileID: 1318232083017947959}
+  - component: {fileID: 204217392157024518}
   m_Layer: 0
   m_Name: PlayerEventSystem
   m_TagString: Untagged
@@ -150,7 +150,7 @@ Transform:
   m_Father: {fileID: 8280075261099129418}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1318232083017947959
+--- !u!114 &204217392157024518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,10 +159,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8143528500448634147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dce6b928934fea43a67ecb703b66928, type: 3}
+  m_Script: {fileID: 11500000, guid: a063a792bdbe13540ad007af2a4fc1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 1b0ad5b769361534494543993209097a, type: 2}
+  Event: {fileID: 11400000, guid: 9894de10bd5734f48860fa1fdcc699e0, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -177,6 +177,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: -753736551039596815}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8280075261099129431
 GameObject:
@@ -305,13 +317,36 @@ MonoBehaviour:
   boxCollider: {fileID: 4279630998362341092}
   moveTime: 0.1
   movementInterval: 2
-  cantMoveEvent: {fileID: 11400000, guid: 1b0ad5b769361534494543993209097a, type: 2}
-  moveUpEvent: {fileID: 11400000, guid: 1694481e2f1ac4b45ae32f0c24551162, type: 2}
-  moveDownEvent: {fileID: 11400000, guid: eab009f64234e634783e10bf786d3a41, type: 2}
-  moveLeftEvent: {fileID: 11400000, guid: 516c12384d1fdd84687fa70920111c21, type: 2}
-  moveRightEvent: {fileID: 11400000, guid: 9bfa2c6930138cb48b07837baaea5428, type: 2}
-  movingEvent: {fileID: 11400000, guid: d40e36fa42a99c743926a4d61b0848a1, type: 2}
-  stoppedMovingEvent: {fileID: 11400000, guid: cb6081eb579cb974e9f11623b86affbe, type: 2}
+  cantMoveEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6889bfbe23476c04bae04bc7c2999f8a, type: 2}
+        m_TargetAssemblyTypeName: ArgumentGameEvent`1[[CollisionData, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  approachedOverworldEnemyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9894de10bd5734f48860fa1fdcc699e0, type: 2}
+        m_TargetAssemblyTypeName: ArgumentGameEvent`1[[CollisionData, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &3406213406922473679
 PrefabInstance:
   m_ObjectHideFlags: 0

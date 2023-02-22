@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Unit unit;
+    public Unit Unit;
 
     void Awake()
     {
+        Unit = Instantiate(Unit);
     }
 
 

@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: EnemyUnit
   m_EditorClassIdentifier: 
   unitStats: {fileID: 11400000, guid: cfd8372f225928c4da7cf96bcec882d7, type: 2}
+  Health: {fileID: 11400000, guid: 7ed95df57a6493e4487a51637605afa4, type: 2}
+  MaxHealth: {fileID: 11400000, guid: d84f71e32624d5440be2ad5ddbd34bee, type: 2}
   unitName: Enemy

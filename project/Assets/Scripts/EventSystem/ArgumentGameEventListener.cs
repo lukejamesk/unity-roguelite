@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-[AddComponentMenu("Game Events/Game Event Listener")]
+[AddComponentMenu("Game Events/Argument Game Event Listener")]
 [System.Serializable]
-public class GameEventListener : MonoBehaviour
+public class ArgumentGameEventListener<T> : MonoBehaviour
 {
 
-    public GameEvent Event;
-    public UnityEvent Response;
+    public ArgumentGameEvent<T> Event;
+    public UnityEvent<T> Response;
 
     private void OnEnable()
     {
@@ -23,9 +23,9 @@ public class GameEventListener : MonoBehaviour
         Event.UnregisterListener(this);
     }
 
-    public void OnEventRaised()
+    public void OnEventRaised(T e)
     {
-        Response.Invoke();
+        Response.Invoke(e);
     }
 
 }

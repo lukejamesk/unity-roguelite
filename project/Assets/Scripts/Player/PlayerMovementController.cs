@@ -2,19 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
+using UnityEngine.Events;
+
+public struct CollisionData
+{
+    public GameObject CollidedWith;
+};
+
 
 public class PlayerMovementController : GridMovementController
 {
     public float movementInterval = 2;
 
-    public GameEvent cantMoveEvent;
-    public GameEvent moveUpEvent;
+  /*  public GameEvent moveUpEvent;
     public GameEvent moveDownEvent;
     public GameEvent moveLeftEvent;
     public GameEvent moveRightEvent;
-    public GameEvent movingEvent;
-    public GameEvent stoppedMovingEvent;
+    public GameEvent movingEvent; 
+    public GameEvent stoppedMovingEvent;*/
 
+
+    public UnityEvent<CollisionData> cantMoveEvent;
+    public UnityEvent<CollisionData> approachedOverworldEnemyEvent; 
 
     protected override void Start()
     {
@@ -34,13 +43,13 @@ public class PlayerMovementController : GridMovementController
             if (Input.GetAxis("Horizontal") < 0)
             {
                 MoveLeft();
-                moveLeftEvent.Raise(this, null);
+          /*      moveLeftEvent.Raise<Null>(null);*/
 
             }
             else if (Input.GetAxis("Horizontal") > 0)
             {
                 MoveRight();
-                moveRightEvent.Raise(this, null);
+               /* moveRightEvent.Raise<Null>(null);*/
             }
 
         }
@@ -49,12 +58,12 @@ public class PlayerMovementController : GridMovementController
             if (Input.GetAxis("Vertical") < 0)
             {
                 MoveUp();
-                moveUpEvent.Raise(this, null);
+               /* moveUpEvent.Raise<Null>(null);*/
             }
             else if (Input.GetAxis("Vertical") > 0)
             {
                 MoveDown();
-                moveDownEvent.Raise(this, null);
+                /*moveDownEvent.Raise<Null>(null);*/
             }
 
         }
@@ -62,7 +71,7 @@ public class PlayerMovementController : GridMovementController
 
     protected override void OnStartMove()
     {
-        movingEvent.Raise(this, null);
+/*        movingEvent.Raise<Null>(null);*/
     }
 
     protected override void OnStoppedMove()
@@ -72,11 +81,17 @@ public class PlayerMovementController : GridMovementController
 
     protected override void OnCantMove<T>(T component)
     {
-        cantMoveEvent.Raise(this, component);
-       /* if (component.GetComponent<OverworldEnemy>())
+        cantMoveEvent.Invoke(new CollisionData
         {
-            var enemy = component.GetComponent<OverworldEnemy>();
-            EventBus.Trigger(EventConstants.PLAYER_ENEMY_APPROACHED, new List<OverworldEnemy> { enemy });
-        }*/
+            CollidedWith = component.gameObject
+        });
+
+        if (component.GetComponent<OverworldEnemy>())
+        {
+            approachedOverworldEnemyEvent.Invoke(new CollisionData
+            {
+                CollidedWith = component.gameObject
+            });
+        }
     }
 }

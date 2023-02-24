@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d217e0f20eed947b013cdbd044406b, type: 3}
-  m_Name: HP Ref
+  m_Script: {fileID: 11500000, guid: c235b4ade1443494787b8a081aa2f8bf, type: 3}
+  m_Name: EntityHealthChangeEvent
   m_EditorClassIdentifier: 
-  UseConstant: 0
-  ConstantValue: 0
-  Variable: {fileID: 11400000, guid: 68c8b26b8ef2ab04e9cc88e313dee9fd, type: 2}

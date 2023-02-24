@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a49d0587e8698f468261228e06f103b, type: 3}
-  m_Name: EnemyUnit
+  m_Name: PlayerUnit
   m_EditorClassIdentifier: 
-  unitStats: {fileID: 11400000, guid: cfd8372f225928c4da7cf96bcec882d7, type: 2}
-  Health: {fileID: 11400000, guid: 00762e01441547d4cbfe884df5f26727, type: 2}
+  unitStats: {fileID: 11400000, guid: 72ee6cec024e0b141b393d0e1d44dbea, type: 2}
+  Health: {fileID: 11400000, guid: aabd568ba1e082a45ae6e6da18e194bc, type: 2}
   unitName: Enemy
-  portrait: {fileID: -1186618113, guid: 95173d9610e130e43b51d78446f0b680, type: 3}
+  portrait: {fileID: 1360430750, guid: 24d63f1d4fdcb8d42923df238594baf0, type: 3}

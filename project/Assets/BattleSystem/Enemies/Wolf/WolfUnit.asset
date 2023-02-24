@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WolfUnit
   m_EditorClassIdentifier: 
   unitStats: {fileID: 11400000, guid: 48ce3a9e140e0fa4fb6796621f6d1d2a, type: 2}
-  Health: {fileID: 11400000, guid: 69992779e0a59f044aa6e977b442bc4a, type: 2}
-  MaxHealth: {fileID: 11400000, guid: b3d7b58123d8239478b8e623658e7844, type: 2}
+  Health: {fileID: 11400000, guid: 77dd4eb2872a36a479f6e89a82ce2d7c, type: 2}
   unitName: Wolf
+  portrait: {fileID: -1186618113, guid: 95173d9610e130e43b51d78446f0b680, type: 3}

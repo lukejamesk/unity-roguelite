@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public struct CollisionData
 {
+    public GameObject CollidedFrom;
     public GameObject CollidedWith;
 };
 
@@ -83,6 +84,7 @@ public class PlayerMovementController : GridMovementController
     {
         cantMoveEvent.Invoke(new CollisionData
         {
+            CollidedFrom = gameObject,
             CollidedWith = component.gameObject
         });
 
@@ -90,8 +92,9 @@ public class PlayerMovementController : GridMovementController
         {
             approachedOverworldEnemyEvent.Invoke(new CollisionData
             {
+                CollidedFrom = gameObject,
                 CollidedWith = component.gameObject
-            });
+            }); ;
         }
     }
 }

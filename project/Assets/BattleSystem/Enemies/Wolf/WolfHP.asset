@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bad1f53d3d4f234ea102b9f3c89d326, type: 3}
   m_Name: WolfHP
   m_EditorClassIdentifier: 
-  Value: 99
+  Value: 98

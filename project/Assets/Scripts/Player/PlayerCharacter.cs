@@ -9,15 +9,10 @@ public class PlayerCharacter : MonoBehaviour
 
     void Start()
     {
-        EventBus.Register<List<OverworldEnemy>>(EventConstants.PLAYER_ENEMY_APPROACHED, BeginBattle);
-
     }
 
     private void Update()
     {
     }
 
-    public void BeginBattle(List<OverworldEnemy> enemies)
-    {
-    }
 }

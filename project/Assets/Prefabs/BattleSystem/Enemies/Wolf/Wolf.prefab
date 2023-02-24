@@ -28,6 +28,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 69992779e0a59f044aa6e977b442bc4a, type: 2}
     - target: {fileID: 4408871461504526476, guid: 18825eb87fc00bc43984721ca46562eb, type: 3}
+      propertyPath: Unit
+      value: 
+      objectReference: {fileID: 11400000, guid: c1bbbf3f12b8bf541aa3930d27138dcf, type: 2}
+    - target: {fileID: 4408871461504526476, guid: 18825eb87fc00bc43984721ca46562eb, type: 3}
       propertyPath: unit
       value: 
       objectReference: {fileID: 11400000, guid: c1bbbf3f12b8bf541aa3930d27138dcf, type: 2}
@@ -82,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 9219827068541732457, guid: 18825eb87fc00bc43984721ca46562eb, type: 3}
       propertyPath: Max
       value: 
-      objectReference: {fileID: 11400000, guid: b3d7b58123d8239478b8e623658e7844, type: 2}
+      objectReference: {fileID: 11400000, guid: 69992779e0a59f044aa6e977b442bc4a, type: 2}
     - target: {fileID: 9219827068541732457, guid: 18825eb87fc00bc43984721ca46562eb, type: 3}
       propertyPath: Variable
       value: 

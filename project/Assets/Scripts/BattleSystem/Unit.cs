@@ -7,6 +7,6 @@ public class Unit : ScriptableObject
 {
     public UnitStats unitStats;
     public IntReference Health;
-    public IntReference MaxHealth;
     public string unitName;
+    public Sprite portrait;
 }

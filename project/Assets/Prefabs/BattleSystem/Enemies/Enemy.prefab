@@ -99,7 +99,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c244d5c1a42f04a9628310c616292c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 11400000, guid: de8ce51b8b882e149b7b7d4500238020, type: 2}
+  Unit: {fileID: 11400000, guid: de8ce51b8b882e149b7b7d4500238020, type: 2}
+  EntityHealthChangedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: de27d7538d63b8b459c4587bea640866, type: 2}
+        m_TargetAssemblyTypeName: ArgumentGameEvent`1[[EntityHealthChangeData, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TickCounter: 100
+  TickSpeed: 5
 --- !u!95 &-2798153511083134707
 Animator:
   serializedVersion: 5
@@ -214,7 +231,11 @@ PrefabInstance:
     - target: {fileID: 4025571784302574396, guid: 1af8a14a3533a364382a5f6dd3aed8a8, type: 3}
       propertyPath: Max
       value: 
-      objectReference: {fileID: 11400000, guid: 6c9267174a7f89141ac4c54d85b04dd8, type: 2}
+      objectReference: {fileID: 11400000, guid: 68c8b26b8ef2ab04e9cc88e313dee9fd, type: 2}
+    - target: {fileID: 4025571784302574396, guid: 1af8a14a3533a364382a5f6dd3aed8a8, type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 4408871461504526476}
     - target: {fileID: 4025571784302574396, guid: 1af8a14a3533a364382a5f6dd3aed8a8, type: 3}
       propertyPath: Variable
       value: 
@@ -230,3 +251,47 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3145110421775206299, guid: 1af8a14a3533a364382a5f6dd3aed8a8, type: 3}
   m_PrefabInstance: {fileID: 5201327626530504021}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8179017843324197085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4156653748827792776, guid: 1af8a14a3533a364382a5f6dd3aed8a8, type: 3}
+  m_PrefabInstance: {fileID: 5201327626530504021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7118446435816977857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179017843324197085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7098108645fafc4cbffb771e95b5d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: de27d7538d63b8b459c4587bea640866, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9219827068541732457}
+        m_TargetAssemblyTypeName: ImageFillSetter, Assembly-CSharp
+        m_MethodName: HealthChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9219827068541732457 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4025571784302574396, guid: 1af8a14a3533a364382a5f6dd3aed8a8, type: 3}
+  m_PrefabInstance: {fileID: 5201327626530504021}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179017843324197085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcaf0b495aa5d9a41896f4573ea1e0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

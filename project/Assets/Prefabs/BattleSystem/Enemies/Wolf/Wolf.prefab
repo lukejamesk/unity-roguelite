@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
+    - target: {fileID: 2913014913325142651, guid: 18825eb87fc00bc43984721ca46562eb, type: 3}
+      propertyPath: skillList
+      value: 
+      objectReference: {fileID: 11400000, guid: dbd392de0a6daf1459551d3e7399e261, type: 2}
     - target: {fileID: 3113192545693375736, guid: 18825eb87fc00bc43984721ca46562eb, type: 3}
       propertyPath: m_SizeDelta.x
       value: 3

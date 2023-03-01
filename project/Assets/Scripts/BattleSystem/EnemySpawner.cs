@@ -1,41 +1,45 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+namespace LukeKing.BattleSystem
 {
-    public SpawnableEnemies SpawnableEnemies;
-    public GameObject AttachTo;
-
-    // Start is called before the first frame update
-    void Start()
-    { 
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    public class EnemySpawner : MonoBehaviour
     {
-        
-    }
+        public SpawnableEnemies SpawnableEnemies;
+        public GameObject AttachTo;
 
-    public List<Entity> SpawnEnemiesFrom(CollisionData collisionData)
-    {
-        var enemiesSpawned = new List<Entity>();
-        Vector3 location = collisionData.CollidedWith.transform.position;
-        var wolf1 = Instantiate(SpawnableEnemies.enemies[0], location, Quaternion.identity, AttachTo.transform);
-        enemiesSpawned.Add(wolf1);
+        // Start is called before the first frame update
+        void Start()
+        {
 
-        var wolf2 = Instantiate(SpawnableEnemies.enemies[0], new Vector3(location.x - 1, location.y + 1), Quaternion.identity, AttachTo.transform);
-        enemiesSpawned.Add(wolf2);
+        }
 
-        Destroy(collisionData.CollidedWith);
+        // Update is called once per frame
+        void Update()
+        {
 
-        return new List<Entity>
+        }
+
+        public List<Enemy> SpawnEnemiesFrom(CollisionData collisionData)
+        {
+            var enemiesSpawned = new List<Enemy>();
+            Vector3 location = collisionData.CollidedFrom.transform.position;
+            var wolf1 = Instantiate(SpawnableEnemies.enemies[0], new Vector3(location.x - 2, location.y), Quaternion.identity, AttachTo.transform);
+            enemiesSpawned.Add(wolf1);
+
+            var wolf2 = Instantiate(SpawnableEnemies.enemies[0], new Vector3(location.x - 3, location.y + 1), Quaternion.identity, AttachTo.transform);
+            enemiesSpawned.Add(wolf2);
+
+            Destroy(collisionData.CollidedWith);
+
+            return new List<Enemy>
         {
             wolf1,
             wolf2
         };
+        }
     }
 }
+

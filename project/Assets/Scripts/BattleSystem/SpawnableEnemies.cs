@@ -1,9 +1,13 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Spawnable Enemies", menuName = "BattleSystem/Spawnable Enemies")]
-public class SpawnableEnemies : ScriptableObject
+namespace LukeKing.BattleSystem
 {
-    public List<Entity> enemies;
+    [CreateAssetMenu(fileName = "Spawnable Enemies", menuName = "Battle System/Spawnable Enemies")]
+    public class SpawnableEnemies : ScriptableObject
+    {
+        public List<Enemy> enemies;
+    }
 }
+

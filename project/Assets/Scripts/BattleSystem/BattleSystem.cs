@@ -13,7 +13,7 @@ namespace LukeKing.BattleSystem
 
         public List<Ally> Allies;
 
-        protected List<Actor> Participants { get; private set; }
+        public List<Actor> Participants { get; private set; }
 
         public List<Enemy> Enemies
         {
@@ -23,7 +23,14 @@ namespace LukeKing.BattleSystem
             }
         }
 
-        /* protected List<Actor> TurnOrder;*/
+
+        public Actor ActorTakingTurn {
+            get
+            {
+                return Participants[CurrentTurn];
+            }
+        }
+
         private int CurrentTurn = 0;
 
         public void Start()
@@ -47,7 +54,6 @@ namespace LukeKing.BattleSystem
             while (!WinConditionMet())
             {
                 var currentActorTurn = Participants[CurrentTurn];
-
 
                 currentActorTurn.StartTurn();
 

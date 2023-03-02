@@ -32,12 +32,16 @@ namespace LukeKing.BattleSystem
             var wolf2 = Instantiate(SpawnableEnemies.enemies[0], new Vector3(location.x - 3, location.y + 1), Quaternion.identity, AttachTo.transform);
             enemiesSpawned.Add(wolf2);
 
+            var wolf3 = Instantiate(SpawnableEnemies.enemies[0], new Vector3(location.x - 2, location.y + 2), Quaternion.identity, AttachTo.transform);
+            enemiesSpawned.Add(wolf3);
+
             Destroy(collisionData.CollidedWith);
 
             return new List<Enemy>
         {
             wolf1,
-            wolf2
+            wolf2,
+            wolf3
         };
         }
     }

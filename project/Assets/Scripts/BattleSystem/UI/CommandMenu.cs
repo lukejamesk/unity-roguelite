@@ -15,7 +15,8 @@ namespace LukeKing.BattleSystem
 
         private Actor CurrentActor;
 
-        public ActorSkill? SkillSelected { get; private set; } = null;
+        [HideInInspector]
+        public ActorSkill SkillSelected { get; private set; } = null;
 
 
         private RectTransform Rect;
@@ -23,8 +24,6 @@ namespace LukeKing.BattleSystem
         private float activeYPosition;
 
         private float currentYPosition => Rect.anchoredPosition.y;
-
-        public BattleCommand? SelectedCommand { get; private set; } = null;
 
         private List<ActionButton> actionButtonsCreated;
 

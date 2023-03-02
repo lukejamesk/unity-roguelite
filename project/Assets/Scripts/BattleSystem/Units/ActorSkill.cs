@@ -10,5 +10,7 @@ namespace LukeKing.BattleSystem
     {
         public string Name;
         public int BaseDamage;
+        public TargetDefault TargetDefault;
+        public TargetType TargetType;
     }
 }

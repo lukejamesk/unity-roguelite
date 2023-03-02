@@ -13,8 +13,6 @@ namespace LukeKing.BattleSystem
 
         private IEnumerator Co_GetPlayerCommand()
         {
-            yield return new WaitForSeconds(1);
-
             CommandFetcher commandFetcher = new CommandFetcher(this);
 
             StartCoroutine(commandFetcher.Co_GetCommand());

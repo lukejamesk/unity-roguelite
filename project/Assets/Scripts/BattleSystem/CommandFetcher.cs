@@ -10,47 +10,54 @@ namespace LukeKing.BattleSystem
         private CommandMenu commandMenu;
         public ICommand Command { get; private set; }
 
-        private Actor actor;
-        public CommandFetcher(Actor actor)
+        private Ally ally;
+        private TargetSystem targetSystem;
+
+        public CommandFetcher(Ally actor)
         {
-            this.actor = actor;
+            this.ally = actor;
             battleSystem = GameObject.FindObjectOfType<BattleSystem>();
             commandMenu = GameObject.FindObjectOfType<CommandMenu>();
+            targetSystem = GameObject.FindObjectOfType<TargetSystem>();
 
         }
-        /*    public void GetCommand() => StartCoroutine(Co_GetCommand());
-            }*/
+
 
         public IEnumerator Co_GetCommand()
         {
-            commandMenu.EnableCommandFor(actor);
+            commandMenu.EnableCommandFor(ally);
 
-            while (commandMenu.SkillSelected is null)
+            /*while (commandMenu.SkillSelected is null)
             {
-                yield return null;
-            }
-
-            Debug.Log(commandMenu.SkillSelected);
-
-            Command = new Attack(new BattleCommand
-            {
-                From = actor,
-                Skill = commandMenu.SkillSelected,
-                Targets = new List<Actor>() { battleSystem.Enemies[0] }
-            });
-
-            commandMenu.Deactivate();
-            while (Command == null)
-            {
-                yield return null;
-            }
-            /*while (Command == null)
-            {
-                var targets = new List<Actor>() { battleSystem.Enemies[0] };
-                Command = new Attack(actor, targets);
-
                 yield return null;
             }*/
+
+
+            while (Command == null)
+            {
+                targetSystem.GetTarget(TargetType.SingleEnemy, TargetDefault.Enemy);
+
+                if (!(commandMenu.SkillSelected != null && targetSystem.SelectedTargets.Count > 0))
+                {
+                    yield return null;
+                }
+
+                if (commandMenu.SkillSelected && targetSystem.SelectedTargets.Count > 0)
+                {
+                    Command = new Attack(new BattleCommand
+                    {
+                        From = ally,
+                        Skill = commandMenu.SkillSelected,
+                        Targets = targetSystem.SelectedTargets
+                    });
+                }
+
+
+                yield return null;
+            }
+
+            commandMenu.Deactivate();
+            targetSystem.Deactivate();
 
             yield return null;
         }

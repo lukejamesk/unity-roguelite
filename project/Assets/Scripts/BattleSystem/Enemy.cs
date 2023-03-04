@@ -16,8 +16,11 @@ namespace LukeKing.BattleSystem
 
         public override void StartTurn()
         {
-            IsTakingTurn = true;
-            StartCoroutine(Co_TakeTurn());
+            if (IsAlive())
+            {
+                IsTakingTurn = true;
+                StartCoroutine(Co_TakeTurn());
+            }
         }
 
         private IEnumerator Co_TakeTurn()

@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b7a3d3fac4d6f49b35cdfe1416e822, type: 3}
-  m_Name: WolfSkillList
+  m_Script: {fileID: 11500000, guid: 85569ea478e01a54e9011ff6e12bd81a, type: 3}
+  m_Name: ActorHealthChangeEvent
   m_EditorClassIdentifier: 
-  skillList:
-  - {fileID: 11400000, guid: 3c1f9ac9175e5f24e8728538857e0f36, type: 2}

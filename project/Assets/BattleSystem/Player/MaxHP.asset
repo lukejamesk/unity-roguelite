@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c235b4ade1443494787b8a081aa2f8bf, type: 3}
-  m_Name: EntityHealthChangeEvent
+  m_Script: {fileID: 11500000, guid: 8bad1f53d3d4f234ea102b9f3c89d326, type: 3}
+  m_Name: MaxHP
   m_EditorClassIdentifier: 
+  Value: 200

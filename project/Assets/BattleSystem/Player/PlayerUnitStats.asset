@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6181fc5557297ed4eb19cdb83396e42d, type: 3}
-  m_Name: Attack
+  m_Script: {fileID: 11500000, guid: 1d4a3779c3f48b44c80b0cf511e14f59, type: 3}
+  m_Name: PlayerUnitStats
   m_EditorClassIdentifier: 
-  Name: ' Attack'
-  BaseDamage: 25
-  TargetDefault: 1
-  TargetType: 0
+  Health: {fileID: 11400000, guid: 4f341dc2061c79d4888817919ed47df7, type: 2}
+  Agility: {fileID: 11400000, guid: 48434484f65d54644b35baa650157b10, type: 2}

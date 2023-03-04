@@ -1,15 +1,19 @@
 ﻿using System;
 using UnityEngine;
-
+using UnityEngine.Events;
 namespace LukeKing.BattleSystem
 {
     public abstract class Actor : MonoBehaviour
     {
-        public ActorSkillList skillList;
+        [SerializeField]
+        private UnityEvent<HealthChangeData> healthChangeEvent;
+
+        public Unit Unit;
         protected Vector2 startingPosition;
         public bool IsTakingTurn { get; protected set; }
 
-        public int Health;
+        [HideInInspector]
+        public int CurrentHealth { get; private set; }
 
         protected virtual void Start()
         {
@@ -18,12 +22,25 @@ namespace LukeKing.BattleSystem
 
         protected virtual void Awake()
         {
-
+            CurrentHealth = Unit.UnitStats.Health.Value;
         }
 
         public bool IsAlive()
         {
-            return Health > 0;
+            return CurrentHealth > 0;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            var newHealth = CurrentHealth - damage;
+            CurrentHealth = newHealth < 0 ? 0 : newHealth;
+
+            healthChangeEvent.Invoke(new HealthChangeData()
+            {
+                Actor = this,
+                DamageTaken = damage,
+                UpdatedHealth = CurrentHealth,
+            });
         }
 
         public abstract void StartTurn();

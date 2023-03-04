@@ -59,7 +59,11 @@ namespace LukeKing.BattleSystem
         {
             IsFindingTarget = true;
 
-            ValidTargets = battleSystem.Participants.OfType<Enemy>().Cast<Actor>().ToList();
+            ValidTargets = battleSystem.Participants
+                .OfType<Enemy>()
+                .Cast<Actor>()
+                .ToList()
+                .FindAll(Actor => Actor.IsAlive());
 
             if (targetIndicator != null)
             {
@@ -83,10 +87,10 @@ namespace LukeKing.BattleSystem
             switch (targetDefault)
             {
                 case TargetDefault.Enemy:
-                    var enemyPositionIndicator = new Vector3(ValidTargets[0].transform.position.x, battleSystem.Enemies[0].transform.position.y + 1, 0);
+                    var enemyPositionIndicator = new Vector3(ValidTargets[0].transform.position.x, ValidTargets[0].transform.position.y + .5f, 0);
                     if (targetIndicator == null)
                     {
-                        targetIndicator = Instantiate(TargetIndicatorPrefab, enemyPositionIndicator, Quaternion.identity, battleSystem.Enemies[0].transform);
+                        targetIndicator = Instantiate(TargetIndicatorPrefab, enemyPositionIndicator, Quaternion.identity, ValidTargets[0].transform);
                         selectedTargets = new List<Actor>()
                         {
                             ValidTargets[0]

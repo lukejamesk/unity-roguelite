@@ -41,7 +41,6 @@ namespace LukeKing.BattleSystem
 
         public void Update()
         {
-           
         }
 
         public void EnableCommandFor(Actor actor) {
@@ -68,14 +67,23 @@ namespace LukeKing.BattleSystem
         private void SetupMenu()
         {
             actionButtonsCreated = new List<ActionButton>();
-            CurrentActor.skillList.skillList.ForEach((skill) =>
-            {
-                var Button = Instantiate(ActionButton, gameObject.transform.position, Quaternion.identity, gameObject.transform);
-                Button.Skill = skill;
-                Button.OnSelect(ActionSelected);
 
-                actionButtonsCreated.Add(Button);
-            });
+            var Button = Instantiate(ActionButton, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+            Button.Skill = CurrentActor.Unit.AttackSkill;
+            Button.ShortcutKey = "1";
+            Button.OnSelect(ActionSelected);
+
+            actionButtonsCreated.Add(Button);
+
+
+            /* CurrentActor.skillList.skillList.ForEach((skill) =>
+             {
+                 var Button = Instantiate(ActionButton, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+                 Button.Skill = skill;
+                 Button.OnSelect(ActionSelected);
+
+                 actionButtonsCreated.Add(Button);
+             });*/
 
             if (IsSelecting && currentYPosition != activeYPosition)
             {

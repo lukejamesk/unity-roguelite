@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b2a775a6fe7e647bd7481a8f87c022, type: 3}
-  m_Name: PlayerTurnEndedEvent
+  m_Script: {fileID: 11500000, guid: 1d4a3779c3f48b44c80b0cf511e14f59, type: 3}
+  m_Name: WolfUnitStats
   m_EditorClassIdentifier: 
+  Health: {fileID: 11400000, guid: 5e091ac5a4aec344581a92057bc3b7a7, type: 2}
+  Agility: {fileID: 11400000, guid: 2addb13c9e08a9345911aeaee3565d4e, type: 2}

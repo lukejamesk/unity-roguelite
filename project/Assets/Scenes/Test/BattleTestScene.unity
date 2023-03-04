@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnableEnemies: {fileID: 11400000, guid: d6532bc840767014c920036121715d9d, type: 2}
   AttachTo: {fileID: 1924933735}
+  HealthBarPrefab: {fileID: 5519803434830306804, guid: 1885adee392d70b4dadadf9659841b3d, type: 3}
 --- !u!224 &473620355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -351,6 +352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectFollowingCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 8473424340964324066, guid: f199828eeb0f9a449a6bdb3041f38303, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8473424340964324068, guid: f199828eeb0f9a449a6bdb3041f38303, type: 3}
       propertyPath: orthographic
       value: 1
@@ -419,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1458110368}
   - component: {fileID: 1458110369}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TargetSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,6 +651,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1713027122}
     m_Modifications:
+    - target: {fileID: 8350139805596286629, guid: 928e6456bc5f03c46b434770ae5851fd, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8350139805596286630, guid: 928e6456bc5f03c46b434770ae5851fd, type: 3}
       propertyPath: m_Name
       value: CommandMenu
@@ -720,11 +729,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8350139805596286631, guid: 928e6456bc5f03c46b434770ae5851fd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8350139805596286631, guid: 928e6456bc5f03c46b434770ae5851fd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -930
+      value: -700
       objectReference: {fileID: 0}
     - target: {fileID: 8350139805596286631, guid: 928e6456bc5f03c46b434770ae5851fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

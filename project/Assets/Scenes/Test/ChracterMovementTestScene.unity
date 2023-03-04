@@ -123,44 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &379086164 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5758745239730213382, guid: 027d43de84bd57c4f8f6e142b423ba49, type: 3}
-  m_PrefabInstance: {fileID: 712222623}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &379086167 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 1022520515410149549, guid: 027d43de84bd57c4f8f6e142b423ba49, type: 3}
-  m_PrefabInstance: {fileID: 712222623}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &379086168 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5758745239730213383, guid: 027d43de84bd57c4f8f6e142b423ba49, type: 3}
-  m_PrefabInstance: {fileID: 712222623}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &379086172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379086164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2ecc36c4ca3db6429ca4469b0778a5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb2D: {fileID: 379086167}
-  boxCollider: {fileID: 379086168}
-  moveTime: 0.1
-  movementInterval: 2
-  cantMoveEvent: {fileID: 0}
-  moveUpEvent: {fileID: 0}
-  moveDownEvent: {fileID: 0}
-  moveLeftEvent: {fileID: 0}
-  moveRightEvent: {fileID: 0}
-  movingEvent: {fileID: 0}
-  stoppedMovingEvent: {fileID: 0}
 --- !u!1001 &712222623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,10 +178,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OverworldEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 6453629458252094077, guid: 027d43de84bd57c4f8f6e142b423ba49, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 027d43de84bd57c4f8f6e142b423ba49, type: 3}
 --- !u!1001 &1224624044
@@ -236,7 +194,7 @@ PrefabInstance:
     - target: {fileID: 8473424340964324070, guid: f199828eeb0f9a449a6bdb3041f38303, type: 3}
       propertyPath: objectToFollow
       value: 
-      objectReference: {fileID: 379086164}
+      objectReference: {fileID: 1266884393}
     - target: {fileID: 8473424340964324071, guid: f199828eeb0f9a449a6bdb3041f38303, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -283,6 +241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f199828eeb0f9a449a6bdb3041f38303, type: 3}
+--- !u!1 &1266884393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8280075261099129431, guid: d0951e41bed26a443aa60ab1543e0be5, type: 3}
+  m_PrefabInstance: {fileID: 1860813652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1860813652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -290,6 +253,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3855635807710301463, guid: d0951e41bed26a443aa60ab1543e0be5, type: 3}
+      propertyPath: approachedOverworldEnemyEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855635807710301463, guid: d0951e41bed26a443aa60ab1543e0be5, type: 3}
+      propertyPath: approachedOverworldEnemyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855635807710301463, guid: d0951e41bed26a443aa60ab1543e0be5, type: 3}
+      propertyPath: approachedOverworldEnemyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8280075261099129418, guid: d0951e41bed26a443aa60ab1543e0be5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -346,7 +321,8 @@ PrefabInstance:
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7962423677155945972, guid: d0951e41bed26a443aa60ab1543e0be5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d0951e41bed26a443aa60ab1543e0be5, type: 3}
 --- !u!1001 &1977108906
 PrefabInstance:

@@ -9,6 +9,7 @@ namespace LukeKing.BattleSystem
     {
         public SpawnableEnemies SpawnableEnemies;
         public GameObject AttachTo;
+        public HealthBar HealthBarPrefab;
 
         // Start is called before the first frame update
         void Start()
@@ -37,12 +38,13 @@ namespace LukeKing.BattleSystem
 
             Destroy(collisionData.CollidedWith);
 
-            return new List<Enemy>
-        {
-            wolf1,
-            wolf2,
-            wolf3
-        };
+            enemiesSpawned.ForEach(enemySpawned =>
+            {
+                var healthBar = Instantiate(HealthBarPrefab, enemySpawned.transform.position, Quaternion.identity, AttachTo.transform);
+                healthBar.Actor = enemySpawned;
+            });
+
+            return enemiesSpawned;
         }
     }
 }

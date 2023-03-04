@@ -36,7 +36,11 @@ namespace LukeKing.BattleSystem
                 yield return null;
             }
 
-            yield return new WaitForSecondsRealtime(1f);
+            yield return new WaitForSecondsRealtime(.5f);
+
+            targets.ForEach(target => target.TakeDamage(CalculateAttack(target)));
+
+            yield return new WaitForSecondsRealtime(.5f);
 
             while (attacker.transform.position != initialPosition)
             {
@@ -48,6 +52,11 @@ namespace LukeKing.BattleSystem
             yield return new WaitForSecondsRealtime(.5f);
 
             IsFinished = true;
+        }
+
+        private int CalculateAttack(Actor defender)
+        {
+            return skill.BaseDamage;
         }
     }
 }

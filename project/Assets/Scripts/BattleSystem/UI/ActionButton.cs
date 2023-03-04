@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace LukeKing.BattleSystem
 {
@@ -10,7 +11,12 @@ namespace LukeKing.BattleSystem
     {
         public Button Button { get; private set; }
         public ActorSkill Skill;
+        public string ShortcutKey;
         private System.Action<ActorSkill> callbackOnClick;
+
+        public TextMeshProUGUI ShortcutText;
+
+        public TextMeshProUGUI NameText;
 
         private void Start()
         {
@@ -22,6 +28,23 @@ namespace LukeKing.BattleSystem
             });
         }
 
+        private void Update()
+        {
+            if (ShortcutText.text != ShortcutKey)
+            {
+                ShortcutText.text = ShortcutKey;
+            }
+
+            if (NameText.text != Skill.Name)
+            {
+                NameText.text = Skill.Name;
+            }
+
+            if (Input.GetKey(ShortcutKey))
+            {
+                Button.onClick.Invoke();
+            }
+        }
         public void OnSelect(System.Action<ActorSkill> callback) 
         {
             callbackOnClick = callback;

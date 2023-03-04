@@ -64,7 +64,7 @@ namespace LukeKing.BattleSystem
             CurrentSelection = actor;
             var currentTargetPosition = CurrentSelection.transform.position;
             selectorTransform.SetParent(CurrentSelection.transform);
-            selectorTransform.position = new Vector3(currentTargetPosition.x, currentTargetPosition.y + 1, 0);
+            selectorTransform.position = new Vector3(currentTargetPosition.x, currentTargetPosition.y + .5f, 0);
         }
     }
 }

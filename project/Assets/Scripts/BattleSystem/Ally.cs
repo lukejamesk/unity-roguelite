@@ -7,8 +7,12 @@ namespace LukeKing.BattleSystem
     {
         public override void StartTurn()
         {
-            IsTakingTurn = true;
-            StartCoroutine(Co_GetPlayerCommand());
+            if (IsAlive())
+            {
+                IsTakingTurn = true;
+                StartCoroutine(Co_GetPlayerCommand());
+            }
+            
         }
 
         private IEnumerator Co_GetPlayerCommand()

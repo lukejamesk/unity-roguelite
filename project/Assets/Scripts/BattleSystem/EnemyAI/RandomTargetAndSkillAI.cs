@@ -16,7 +16,7 @@ namespace LukeKing.BattleSystem
             Command = new Attack(new BattleCommand
             {
                 From = self,
-                Skill = self.skillList.skillList[0],
+                Skill = self.Unit.SkillList.skillList[0],
                 Targets = new List<Actor>() { battleSystem.Allies[0] }
             });
         }

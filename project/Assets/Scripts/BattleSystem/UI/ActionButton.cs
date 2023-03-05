@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 namespace LukeKing.BattleSystem
 {
@@ -18,6 +19,13 @@ namespace LukeKing.BattleSystem
 
         public TextMeshProUGUI NameText;
 
+        private OverworldInput input;
+
+        private void Awake()
+        {
+            input = new OverworldInput();
+        }
+
         private void Start()
         {
             Button = gameObject.GetComponent<Button>();
@@ -26,6 +34,22 @@ namespace LukeKing.BattleSystem
             {
                 callbackOnClick(Skill);
             });
+
+
+        }
+
+        private void OnEnable()
+        {
+            input.BattleControls.action.Enable();
+            input.BattleControls.action.performed += (ctx) => {
+                Debug.Log(ctx);
+                Button.onClick.Invoke();
+            };
+        }
+
+        private void OnDisable()
+        {
+            input.BattleControls.action.Disable();
         }
 
         private void Update()
@@ -38,11 +62,6 @@ namespace LukeKing.BattleSystem
             if (NameText.text != Skill.Name)
             {
                 NameText.text = Skill.Name;
-            }
-
-            if (Input.GetKey(ShortcutKey))
-            {
-                Button.onClick.Invoke();
             }
         }
         public void OnSelect(System.Action<ActorSkill> callback) 

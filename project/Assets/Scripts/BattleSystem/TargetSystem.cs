@@ -24,25 +24,35 @@ namespace LukeKing.BattleSystem
 
         private TargetIndicator targetIndicator = null;
 
+        private OverworldInput input;
+
+        private void Awake()
+        {
+            input = new OverworldInput();
+            input.BattleControls.Enable();
+        }
         void Start()
         {
             battleSystem = GetComponentInParent<BattleSystem>();
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (IsFindingTarget)
             {
-                if (Input.GetButtonUp("Horizontal"))
+                if (input.BattleControls.direction.WasPerformedThisFrame())
                 {
-                    if (Input.GetAxis("Horizontal") < 0)
+                    var directionPress = input.BattleControls.direction.ReadValue<Vector2>();
+                    if (directionPress.x != 0)
                     {
-                        MovePrevious();
-                    }
-                    else
-                    {
-                        MoveNext();
+                        if (directionPress.x < 0)
+                        {
+                            MovePrevious();
+                        }
+                        else
+                        {
+                            MoveNext();
+                        }
                     }
                 }
             }
@@ -65,6 +75,8 @@ namespace LukeKing.BattleSystem
                 .ToList()
                 .FindAll(Actor => Actor.IsAlive());
 
+            selectedTargets = selectedTargets.FindAll(selectedTarget => ValidTargets.IndexOf(selectedTarget) > 0);
+
             if (targetIndicator != null)
             {
                 targetIndicator.gameObject.SetActive(true);
@@ -84,17 +96,24 @@ namespace LukeKing.BattleSystem
 
         private void GetAnySingleTarget(TargetDefault targetDefault)
         {
+            if (selectedTargets.Count == 0)
+            {
+                selectedTargets = new List<Actor>()
+                {
+                    ValidTargets[0]
+                };
+
+                NotifyTargetChange(selectedTargets[0]);
+            }
+
             switch (targetDefault)
             {
                 case TargetDefault.Enemy:
-                    var enemyPositionIndicator = new Vector3(ValidTargets[0].transform.position.x, ValidTargets[0].transform.position.y + .5f, 0);
+                    var enemyPositionIndicator = new Vector3(selectedTargets[0].transform.position.x, selectedTargets[0].transform.position.y + .5f, 0);
                     if (targetIndicator == null)
                     {
-                        targetIndicator = Instantiate(TargetIndicatorPrefab, enemyPositionIndicator, Quaternion.identity, ValidTargets[0].transform);
-                        selectedTargets = new List<Actor>()
-                        {
-                            ValidTargets[0]
-                        };
+                        targetIndicator = Instantiate(TargetIndicatorPrefab, enemyPositionIndicator, Quaternion.identity, selectedTargets[0].transform);
+                        
                     }
                     break;
                 default:

@@ -75,16 +75,6 @@ namespace LukeKing.BattleSystem
 
             actionButtonsCreated.Add(Button);
 
-
-            /* CurrentActor.skillList.skillList.ForEach((skill) =>
-             {
-                 var Button = Instantiate(ActionButton, gameObject.transform.position, Quaternion.identity, gameObject.transform);
-                 Button.Skill = skill;
-                 Button.OnSelect(ActionSelected);
-
-                 actionButtonsCreated.Add(Button);
-             });*/
-
             if (IsSelecting && currentYPosition != activeYPosition)
             {
                 Rect.anchoredPosition = new Vector2(Rect.anchoredPosition.x, activeYPosition);

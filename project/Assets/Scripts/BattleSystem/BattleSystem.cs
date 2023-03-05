@@ -31,6 +31,9 @@ namespace LukeKing.BattleSystem
             }
         }
 
+
+        OverworldInput input;
+
         private int CurrentTurn = 0;
 
         public void Start()
@@ -51,6 +54,10 @@ namespace LukeKing.BattleSystem
 
         private IEnumerator Co_RunBattle()
         {
+            input = new OverworldInput();
+            input.BattleControls.Enable();
+            input.OverworldControls.Disable();
+
             while (!WinConditionMet())
             {
                 var currentActorTurn = Participants[CurrentTurn];

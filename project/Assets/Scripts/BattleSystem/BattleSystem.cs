@@ -10,6 +10,8 @@ namespace LukeKing.BattleSystem
     {
         public EnemySpawner EnemySpawner;
         protected CommandMenu commandMenu;
+        public HealthBar HealthBarPrefab;
+        public GameObject AttachTo;
 
         public List<Ally> Allies;
 
@@ -48,6 +50,13 @@ namespace LukeKing.BattleSystem
             Participants = new List<Actor>();
             Allies.ForEach((ally) => Participants.Add(ally));
             enemiesSpawned.ForEach((enemy) => Participants.Add(enemy));
+
+            Allies.ForEach((ally) =>
+            {
+                var healthBar = Instantiate(HealthBarPrefab, ally.transform.position, Quaternion.identity, AttachTo.transform);
+                healthBar.Actor = ally;
+            });
+
 
             StartCoroutine(Co_RunBattle());
         }

@@ -277,6 +277,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemySpawner: {fileID: 473620351}
+  HealthBarPrefab: {fileID: 5519803434830306804, guid: 1885adee392d70b4dadadf9659841b3d, type: 3}
+  AttachTo: {fileID: 1924933735}
   Allies:
   - {fileID: 2092971166}
 --- !u!1001 &682332721
